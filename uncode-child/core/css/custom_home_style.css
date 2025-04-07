@@ -695,3 +695,8 @@ font-family: "uncodeicon";
 .noticias-block.conversas_digitais-block {
     margin-top: 0px;
 }
+@media (max-width: 959px) {
+    .page-template-template-home .navbar-brand > * {
+        height: 40px !important;
+    }
+}
