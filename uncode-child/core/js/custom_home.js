@@ -151,6 +151,58 @@ jQuery(document).ready(function($) {
 
         });
 
+        $('.conversas_digitais-filter-link').on('click', function (e) {
+        	e.preventDefault();
+
+        	var id = $(this).attr('data-id');
+        	console.log(id);
+        	var page_ = $('.tui-is-selected').attr('data-page');
+        	var page = 1;
+        	console.log(page_);
+        	if (typeof page_ != 'undefined') {
+        		page = page_;
+        	}
+
+                $('#noticas_result').css({
+                    'opacity': 0.3
+                });
+                $('#services-loader').show();
+
+                 $.ajax({
+                        type    : "POST",
+                        url     : js_url.ajaxurl,
+                        dataType: "json",
+                        data    : "action=get_conversas_digitais-filter&cat="+id+"&page="+page+"",
+                        success : function (a) {
+                            console.log(a);
+
+                            $('#noticas_result').html(a.content).css({
+                                'opacity': '1'
+                            });
+                            $('#services-loader').hide();
+
+                            $('.filter-show-all a').removeClass('active');
+                            $('.filter-cat a').removeClass('active');
+                            $('.filter-cat-'+id+ ' a').addClass('active');
+
+
+ 							const newURL = `?category=`+id;
+                            console.log(newURL);
+                            window.history.pushState( window.location.pathname,'',newURL);  
+
+                            var destination = $('#noticas_result').offset().top - 150;
+                            $('body,html').animate({scrollTop: destination}, 400);
+
+              
+                        }
+
+                }); //end ajax 
+
+
+
+
+        });
+
         $('.explorar-filter-link').on('click', function (e) {
         	e.preventDefault();
 

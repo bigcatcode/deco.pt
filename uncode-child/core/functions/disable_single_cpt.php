@@ -19,3 +19,22 @@ function wpse_128636_redirect_post_org_archive() {
   }
 }
 
+add_action( 'template_redirect', 'wpse_128636_redirect_post_conversas_digitais' );
+
+function wpse_128636_redirect_post_conversas_digitais() {
+  $queried_post_type = get_query_var('post_type');
+  if ( is_single() && 'conversas_digitais' ==  $queried_post_type ) {
+    wp_redirect( home_url('/conversas_digitais/') );
+    exit;
+  }
+}
+
+add_action( 'template_redirect', 'wpse_128636_redirect_post_org_archive_conversas_digitais' );
+
+function wpse_128636_redirect_post_org_archive_conversas_digitais() {
+  $queried_post_type = get_query_var('post_type');
+  if ( is_post_type_archive('conversas_digitais') ) {
+    wp_redirect( home_url('/conversas_digitais/') );
+    exit;
+  }
+}

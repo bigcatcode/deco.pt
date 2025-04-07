@@ -66,6 +66,7 @@ function custom_child_scripts() {
 		||  is_page_template('template-noticia.php') 
 		||  is_page_template('template-divulgar.php') 
 		||  is_page_template('template-explorar.php')
+		||  is_page_template('template-conversas_digitais.php')
 		||  is_tax('explora')
 	) {
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home
+ * Template Name: Archive conversas_digitais
  */
 
 /**
@@ -154,7 +154,7 @@ if ($page_header_type !== '' && $page_header_type !== 'none') {
 	$header_html = $page_header->html;
 	if ($header_html !== '') {
 		echo '<div id="page-header">';
-		//echo uncode_remove_p_tag( $page_header->html );
+		echo uncode_remove_p_tag( $page_header->html );
 		echo '</div>';
 	}
 }
@@ -365,49 +365,33 @@ if ( have_posts() || uncode_is_filtering() ):
 		}
 	}
 
-	ob_start();
-		get_template_part('template-parts/home', 'slider');
-	$slider_content = ob_get_contents();
-	ob_end_clean();
+	// ob_start();
+	// 	get_template_part('template-parts/home', 'slider');
+	// $slider_content = ob_get_contents();
+	// ob_end_clean();
+
+	// ob_start();
+	// 	get_template_part('template-parts/home', 'divulgar');
+	// $divulgar_content = ob_get_contents();
+	// ob_end_clean();
+
+	// ob_start();
+	// 	get_template_part('template-parts/home', 'noticias');
+	// $noticias_content = ob_get_contents();
+	// ob_end_clean();
 
 	ob_start();
-		get_template_part('template-parts/home', 'divulgar');
-	$divulgar_content = ob_get_contents();
-	ob_end_clean();
-
-	ob_start();
-		get_template_part('template-parts/home', 'noticias');
+		get_template_part('template-parts/archive', 'conversas_digitais');
 	$noticias_content = ob_get_contents();
-	ob_end_clean();
-
-	ob_start();
-		get_template_part('template-parts/home', 'green');
-	$green_content = ob_get_contents();
-	ob_end_clean();
-
-	ob_start();
-		get_template_part('template-parts/home', 'explorar');
-	$explorar_content = ob_get_contents();
-	ob_end_clean();
-
-	ob_start();
-		get_template_part('template-parts/home', 'conversas_digitais');
-	$conversas_digitais_content = ob_get_contents();
 	ob_end_clean();
 
 	/** Display post html **/
 	echo '<div class="page-body' . $bg_color . '">
           <div class="post-wrapper">
-          	<div class="post-body">
-          		<div class="slider_content">
-          			<a href="'.home_url('/protecaofinanceira/').'" class="mainlogo"><img src="https://deco.pt/wp-content/uploads/2023/06/logo-sobreviver-a-crise.svg"></a>'
-          			. $slider_content .
-          		'</div>'	          	
+          	<div class="post-body">'
+          	//. $slider_content 
+          	//. $divulgar_content
           	. $noticias_content
-			. $explorar_content
-          	. $green_content         	
-			. $divulgar_content
-			. $conversas_digitais_content
           	. $content_output 
           	. '</div>' .
           	$navigation_content . '

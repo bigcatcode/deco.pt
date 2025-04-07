@@ -182,7 +182,7 @@
     width: 100%;
 }
 .divulgar-image.noticas-image img {
-    object-fit: fill;
+    /* object-fit: fill; */
     width: 100%;
 }
 
@@ -475,7 +475,8 @@ min-height: 240px;
 .explorar-block  .panel-title > a.term_parent_collapse {
     position: absolute;
     right: 0;
-    top: 8px;
+    /* top: 8px; */
+    top: 0px;
 }
 .explorar-block  .panel-title > a {
 
@@ -681,3 +682,16 @@ font-family: "uncodeicon";
 
 }
 
+.noticias-block-2 {
+    margin-top: 50px;
+}
+#conversas_digitais_result {
+    display: flex;
+      flex-wrap: wrap;
+      margin-right: -40px;
+      position: relative;
+      width: -webkit-fill-available;
+}
+.noticias-block.conversas_digitais-block {
+    margin-top: 0px;
+}

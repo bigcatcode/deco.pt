@@ -5,7 +5,7 @@ $page = 1;
 $itemsPerPage = 3;
 
 $args = array(
-  'post_type'      => 'divulgar', // explorar // noticia // divulgar
+  'post_type'      => 'conversas_digitais', // explorar // noticia // divulgar
   'post_status' => 'publish',
   'order'       => 'DESC',
   'orderby'     => 'date',
@@ -26,7 +26,7 @@ if ( $total < $itemsPerPage ) {
 ?>
 
 
-<div class="post-content un-no-sidebar-layout noticias-block">
+<div class="post-content un-no-sidebar-layout noticias-block conversas_digitais-block">
 	<div data-parent="true" class="vc_row row-container" id="row-unique-999" data-section="0">
 		<div class="row limit-width row-parent" data-imgready="true">
 			<div class="wpb_row row-inner">
@@ -39,7 +39,7 @@ if ( $total < $itemsPerPage ) {
 									<div class="vc_custom_heading_wrap ">
 										<div class="heading-text el-text">
 											<h2 class="h2 fontspace-210350 text-color-jevc-color">
-												<span>VÍDEOS</span>
+												<span>CONVERSAS DIGITAIS</span>
 											</h2>
 										</div>
 										<div class="clear"></div>
@@ -54,7 +54,7 @@ if ( $total < $itemsPerPage ) {
 
 					<div class="row noticas-wraper">
 
-						<div id="divulgar_result" class="ajax_search_result">
+						<div id="conversas_digitais_result" class="ajax_search_result">
 
 							<?php 
 
@@ -71,10 +71,10 @@ if ( $total < $itemsPerPage ) {
 							</div> -->
 		
 							<article class="col-xs-12 col-lg-12 pagination_wrap">
-								<div class="resource-nav-pagination-filter2 <?php echo $pagination_hide; ?> tui-pagination" id="resource-nav-pagination-filter2"></div>
+								<div class="resource-nav-pagination-filter6 <?php echo $pagination_hide; ?> tui-pagination" id="resource-nav-pagination-filter6"></div>
 							</article> 
 							<div class="pagination_text">
-								<a href="<?php echo home_url( '/divulgar/' ); ?>">ver todos os destaques</a>
+								<a href="<?php echo home_url( '/conversas_digitais/' ); ?>">ver todos os destaques</a>
 							</div>		
 
 						</div>
@@ -92,7 +92,7 @@ if ( $total < $itemsPerPage ) {
 
 		//var page = e.page;
 
-         window['resource_nav_pagination-filter2'] = new tui.Pagination(document.getElementById('resource-nav-pagination-filter2'), {
+         window['resource_nav_pagination-filter6'] = new tui.Pagination(document.getElementById('resource-nav-pagination-filter6'), {
               totalItems: <?php echo $total; ?>,
               itemsPerPage: <?php echo $itemsPerPage; ?>,
               visiblePages: 3,
@@ -116,7 +116,7 @@ if ( $total < $itemsPerPage ) {
             }              
           });
 
-        window['resource_nav_pagination-filter2'].on('beforeMove', function(e) {
+        window['resource_nav_pagination-filter6'].on('beforeMove', function(e) {
             var page = e.page;
             
             if ( page ) {
@@ -124,7 +124,7 @@ if ( $total < $itemsPerPage ) {
 
 
 
-                $('#divulgar_result').css({
+                $('#conversas_digitais_result').css({
                     'opacity': 0.3
                 });
                 //$('#services-loader').show();
@@ -133,17 +133,17 @@ if ( $total < $itemsPerPage ) {
                         type    : "POST",
                         url     : js_url.ajaxurl,
                         dataType: "json",
-                        data    : "action=get_divulgar&page="+page+"",
+                        data    : "action=get_conversas_digitais&page="+page+"",
                         success : function (a) {
                             console.log(a);
 
-                            $('#divulgar_result').html(a.content).css({
+                            $('#conversas_digitais_result').html(a.content).css({
                                 'opacity': '1'
                             });
                             //$('#services-loader').hide();
 
 
-                            var destination = $('#divulgar_result').offset().top - 150;
+                            var destination = $('#conversas_digitais_result').offset().top - 150;
                             $('body,html').animate({scrollTop: destination}, 400);
 
               
