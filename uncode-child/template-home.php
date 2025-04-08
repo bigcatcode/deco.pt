@@ -400,7 +400,7 @@ if ( have_posts() || uncode_is_filtering() ):
           <div class="post-wrapper">
           	<div class="post-body">
           		<div class="slider_content">
-          			<a href="'.home_url('/protecaofinanceira/').'" class="mainlogo"><img src="https://deco.pt/wp-content/uploads/2023/06/logo-sobreviver-a-crise.svg"></a>'
+          			<a href="'.home_url('/protecaofinanceira/').'" class="mainlogo"><img src="' . CORE_URL . '/img/deco-protecao-financeira.svg"></a>'
           			. $slider_content .
           		'</div>'	          	
           	. $noticias_content
