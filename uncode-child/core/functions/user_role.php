@@ -47,6 +47,11 @@ function add_noticias_manager_role(){
             'delete_noticia' => true,
             'publish_noticia' => true,
             'read_private_noticia' => true,
+            'read_conversas_digitais' => true,
+            'edit_conversas_digitais' => true,
+            'delete_conversas_digitais' => true,
+            'publish_conversas_digitais' => true,
+            'read_private_conversas_digitais' => true,
             'read_explorar' => true,
             'edit_explorar' => true,
             'delete_explorar' => true,
@@ -85,6 +90,25 @@ function add_noticias_role_caps() {
         $role->add_cap( 'delete_noticia' );
         $role->add_cap( 'publish_noticia' );
         $role->add_cap( 'read_private_noticia' ); // assign_explorar_terms assign_explorars create_explorars delete_explorar_terms delete_explorars delete_private_explorars delete_published_explorars deleteexplorars edit_explorar_terms edit_explorars edit_others_explorars edit_private_explorars edit_published_explorars manage_explorar_terms publish_explorars read_private_explorars
+
+        $role->add_cap( 'read_noticia' );
+        $role->add_cap( 'read_noticias' );
+        $role->add_cap( 'read_private_noticia' );
+        $role->add_cap( 'read_private_noticias' );
+
+
+        $role->add_cap( 'edit_conversas_digitais');
+        $role->add_cap( 'edit_conversas_digitais');
+        $role->add_cap( 'edit_private_conversas_digitais');
+        $role->add_cap( 'edit_private_conversas_digitais');
+        $role->add_cap( 'edit_published_conversas_digitais');
+        $role->add_cap( 'edit_conversas_digitais_terms');
+        $role->add_cap( 'edit_others_conversas_digitais');
+        $role->add_cap( 'delete_conversas_digitais' );
+        $role->add_cap( 'publish_conversas_digitais' );
+        $role->add_cap( 'read_private_conversas_digitais' );
+        $role->add_cap( 'manage_conversas_digitais' );
+
 
         $role->add_cap( 'read_explorar' );
         $role->add_cap( 'edit_explorar' );
